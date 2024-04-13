@@ -16,4 +16,10 @@ struct ChatMessage: Hashable {
     mutating func toggleRefreshButton() {
         showRefreshButton.toggle()
     }
+    
+    func convert() -> Message {
+        return Message(
+            role: self.role,
+            content: self.message)
+    }
 }

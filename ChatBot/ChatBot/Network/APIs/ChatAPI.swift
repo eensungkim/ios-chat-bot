@@ -9,20 +9,21 @@ import Alamofire
 
 enum ChatAPI {
     case createChat(systemContent: String, userContent: String)
+    case createChats(contents: [Message])
 }
 
 extension ChatAPI: BaseAPI {
     
     var urlPath: String {
         switch self {
-        case .createChat(_, _):
+        case .createChat(_, _), .createChats(_):
             return "/v1/chat/completions"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .createChat:
+        case .createChat, .createChats(_):
             return .post
         }
     }
@@ -37,6 +38,11 @@ extension ChatAPI: BaseAPI {
                                             Message(role: .user,
                                                     content: userContent)
                                          ])
+            return .requestBody(body)
+        case .createChats(let contents):
+            let body = ChatRequestModel(
+                model: GPTModelFamilies.main.rawValue,
+                messages: contents)
             return .requestBody(body)
         }
     }

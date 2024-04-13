@@ -20,4 +20,8 @@ final class ChatAPIService {
     func createChat(systemContent: String, userContent: String) -> Single<ChatResponseModel?> {
         return provider.request(.createChat(systemContent: systemContent, userContent: userContent))
     }
+    
+    func createChats(contents: [Message]) -> Single<ChatResponseModel?> {
+        return provider.request(.createChats(contents: contents))
+    }
 }

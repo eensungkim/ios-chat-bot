@@ -31,10 +31,11 @@ final class ChatViewModel {
 // MARK: - Custom Methods
 extension ChatViewModel {
     private func requestAssistantChat(with chatMessage: ChatMessage) -> any Disposable {
-        return service.createChat(
-            systemContent: "Hello! How can I assist you today?",
-            userContent: chatMessage.message
-        )
+        let messages = snapshot.itemIdentifiers.map {
+            return $0.convert()
+        }
+        
+        return service.createChats(contents: messages)
         .observe(on: MainScheduler.asyncInstance)
         .subscribe(
             onSuccess: { [weak self] response in
