@@ -72,13 +72,7 @@ extension ChatViewModel {
     }
     
     private func removeLoadingIndicator() {
-        let emptyMessage = ChatMessage(
-            id: UUID(),
-            role: .assistant,
-            message: "",
-            showRefreshButton: false
-        )
-        applySnapShot(with: emptyMessage, strategy: LoadingIndicatorRemoveStrategy())
+        applySnapShot(strategy: LoadingIndicatorRemoveStrategy())
     }
 }
 
@@ -115,13 +109,7 @@ extension ChatViewModel {
     }
     
     func removeLastChat() {
-        let emptyMessage = ChatMessage(
-            id: UUID(),
-            role: .assistant,
-            message: "",
-            showRefreshButton: false
-        )
-        applySnapShot(with: emptyMessage, strategy: LastChatRemoveStrategy())
+        applySnapShot(strategy: LastChatRemoveStrategy())
     }
 }
 
@@ -134,7 +122,15 @@ extension ChatViewModel {
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
     
-    private func applySnapShot(with chatMessage: ChatMessage, strategy: SnapshotUpdateStrategy) {
+    private func applySnapShot(
+        with chatMessage: ChatMessage = ChatMessage(
+            id: UUID(),
+            role: .assistant,
+            message: "",
+            showRefreshButton: false
+        ),
+        strategy: SnapshotUpdateStrategy
+    ) {
         var snapshot = snapshot
         strategy.apply(using: &snapshot, with: chatMessage, loadingMessage: loadingMessage)
         
