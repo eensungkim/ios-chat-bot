@@ -11,7 +11,11 @@ struct AssistantChatUpdateStrategy: SnapshotUpdateStrategy {
     func apply(using snapshot: inout NSDiffableDataSourceSnapshot<ChatViewModel.Section, ChatMessage>, 
                with chatMessage: ChatMessage,
                loadingMessage: ChatMessage) {
-        snapshot.insertItems([chatMessage], beforeItem: loadingMessage)
-        snapshot.deleteItems([loadingMessage])        
+        if let last = snapshot.itemIdentifiers.last {
+            snapshot.insertItems([chatMessage], afterItem: last)
+            if snapshot.itemIdentifiers.contains(loadingMessage) {
+                snapshot.deleteItems([loadingMessage])                
+            }
+        }
     }
 }

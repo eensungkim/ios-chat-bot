@@ -12,7 +12,10 @@ struct UserChatUpdateStrategy: SnapshotUpdateStrategy {
                with chatMessage: ChatMessage,
                loadingMessage: ChatMessage) {
         if let last = snapshot.itemIdentifiers.last {
-            snapshot.insertItems([chatMessage, loadingMessage], afterItem: last)
+            snapshot.insertItems([chatMessage], afterItem: last)
+            if !snapshot.itemIdentifiers.contains(loadingMessage) {
+                snapshot.insertItems([loadingMessage], afterItem: chatMessage)
+            }
         } else {
             snapshot.appendItems([chatMessage, loadingMessage])
         }
