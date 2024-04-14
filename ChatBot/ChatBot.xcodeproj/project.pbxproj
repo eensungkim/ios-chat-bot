@@ -220,6 +220,23 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		8A58D39A2BCB906A00C0D4F2 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				7783041E2BB527F900C72C63 /* Scenes */,
+				8A6899F92BBE2C16006031CC /* ViewModel */,
+				8A6899FC2BBE3E86006031CC /* Model */,
+			);
+			path = Conversations;
+			sourceTree = "<group>";
+		};
+		8A58D39C2BCB909400C0D4F2 /* PromptSetting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PromptSetting;
+			sourceTree = "<group>";
+		};
 		8A6899F92BBE2C16006031CC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,11 +313,10 @@
 		B4B3E2BB2B42D1BB00818B3C /* ChatBot */ = {
 			isa = PBXGroup;
 			children = (
+				8A58D39C2BCB909400C0D4F2 /* PromptSetting */,
+				8A58D39A2BCB906A00C0D4F2 /* Conversations */,
 				778304102BB5095F00C72C63 /* App */,
 				7783041B2BB5275C00C72C63 /* Utils */,
-				7783041E2BB527F900C72C63 /* Scenes */,
-				8A6899F92BBE2C16006031CC /* ViewModel */,
-				8A6899FC2BBE3E86006031CC /* Model */,
 				7783040F2BB5095500C72C63 /* Network */,
 				7783041F2BB5281E00C72C63 /* Resources */,
 				778304202BB5283800C72C63 /* Supports */,
