@@ -31,6 +31,8 @@
 		77CF46C92BBB8B3A00ABA128 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CF46C82BBB8B3A00ABA128 /* Config.swift */; };
 		8A4318C52BBC215600482CD0 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4318C42BBC215600482CD0 /* ChatCollectionViewCell.swift */; };
 		8A58D3992BCA74E200C0D4F2 /* ChatTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58D3982BCA74E200C0D4F2 /* ChatTabBarController.swift */; };
+		8A58D39F2BCB93F000C0D4F2 /* PromptSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58D39E2BCB93F000C0D4F2 /* PromptSettingViewController.swift */; };
+		8A58D3A12BCB940A00C0D4F2 /* PromptSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58D3A02BCB940A00C0D4F2 /* PromptSettingView.swift */; };
 		8A5F18D62BBA8F0800228C85 /* ChatTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5F18D52BBA8F0800228C85 /* ChatTextView.swift */; };
 		8A62D83F2BB506C000AE7B21 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A62D83E2BB506C000AE7B21 /* ChatBubbleView.swift */; };
 		8A62D8412BB58AF200AE7B21 /* ChatLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A62D8402BB58AF200AE7B21 /* ChatLoadingIndicator.swift */; };
@@ -68,6 +70,8 @@
 		77CF46C82BBB8B3A00ABA128 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		8A4318C42BBC215600482CD0 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A58D3982BCA74E200C0D4F2 /* ChatTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTabBarController.swift; sourceTree = "<group>"; };
+		8A58D39E2BCB93F000C0D4F2 /* PromptSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptSettingViewController.swift; sourceTree = "<group>"; };
+		8A58D3A02BCB940A00C0D4F2 /* PromptSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptSettingView.swift; sourceTree = "<group>"; };
 		8A5F18D52BBA8F0800228C85 /* ChatTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTextView.swift; sourceTree = "<group>"; };
 		8A62D83E2BB506C000AE7B21 /* ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleView.swift; sourceTree = "<group>"; };
 		8A62D8402BB58AF200AE7B21 /* ChatLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLoadingIndicator.swift; sourceTree = "<group>"; };
@@ -233,8 +237,18 @@
 		8A58D39C2BCB909400C0D4F2 /* PromptSetting */ = {
 			isa = PBXGroup;
 			children = (
+				8A58D39D2BCB939500C0D4F2 /* Scenes */,
 			);
 			path = PromptSetting;
+			sourceTree = "<group>";
+		};
+		8A58D39D2BCB939500C0D4F2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8A58D39E2BCB93F000C0D4F2 /* PromptSettingViewController.swift */,
+				8A58D3A02BCB940A00C0D4F2 /* PromptSettingView.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		8A6899F92BBE2C16006031CC /* ViewModel */ = {
@@ -313,10 +327,10 @@
 		B4B3E2BB2B42D1BB00818B3C /* ChatBot */ = {
 			isa = PBXGroup;
 			children = (
-				8A58D39C2BCB909400C0D4F2 /* PromptSetting */,
-				8A58D39A2BCB906A00C0D4F2 /* Conversations */,
 				778304102BB5095F00C72C63 /* App */,
 				7783041B2BB5275C00C72C63 /* Utils */,
+				8A58D39C2BCB909400C0D4F2 /* PromptSetting */,
+				8A58D39A2BCB906A00C0D4F2 /* Conversations */,
 				7783040F2BB5095500C72C63 /* Network */,
 				7783041F2BB5281E00C72C63 /* Resources */,
 				778304202BB5283800C72C63 /* Supports */,
@@ -451,6 +465,7 @@
 				8A6899FE2BBE3E9F006031CC /* ChatMessage.swift in Sources */,
 				8A62D83F2BB506C000AE7B21 /* ChatBubbleView.swift in Sources */,
 				8A781FC52BB69B49009D1CE5 /* ChatViewController.swift in Sources */,
+				8A58D3A12BCB940A00C0D4F2 /* PromptSettingView.swift in Sources */,
 				77CF46AF2BBA438E00ABA128 /* ChatAPI.swift in Sources */,
 				8A6BE6582BC5021900291E78 /* RefreshButtonToggleStrategy.swift in Sources */,
 				7783041A2BB510E400C72C63 /* TargetType.swift in Sources */,
@@ -468,6 +483,7 @@
 				8A4318C52BBC215600482CD0 /* ChatCollectionViewCell.swift in Sources */,
 				77CF46C32BBA97C400ABA128 /* NetworkProvider.swift in Sources */,
 				8A58D3992BCA74E200C0D4F2 /* ChatTabBarController.swift in Sources */,
+				8A58D39F2BCB93F000C0D4F2 /* PromptSettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

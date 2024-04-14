@@ -24,7 +24,11 @@ extension ChatTabBarController {
     private func configure() {
         let chatViewController = ChatViewController()
         chatViewController.tabBarItem = Tab.conversations.tabBarItem
-        setViewControllers([chatViewController], animated: true)
+        
+        let promptSettingViewController = PromptSettingViewController()
+        promptSettingViewController.tabBarItem = Tab.promptSetting.tabBarItem
+        
+        setViewControllers([chatViewController, promptSettingViewController], animated: true)
     }
 }
 
